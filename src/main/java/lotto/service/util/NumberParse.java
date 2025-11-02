@@ -21,6 +21,16 @@ public class NumberParse {
         }
     }
 
+    public static int bounsNumberParse(String input) {
+        validateNotBlank(input);
+
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(ErrorMessage.NOT_NUMBER.getMessage());
+        }
+    }
+
     private static void validateWinningNumber(String input) {
         validateNotBlank(input);
 
