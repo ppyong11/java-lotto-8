@@ -9,7 +9,6 @@ public enum ErrorMessage {
     DUPLICATED_NUMBER("[ERROR] 중복된 번호가 있습니다."),
     DUPLICATED_BONUS_NUMBER("[ERROR] 당첨 번호와 중복되는 번호입니다."),
     INVALID_COUNT("[ERROR] 당첨 번호는 6개여야 합니다."),
-    INVALID_BONUS_COUNT("[ERROR] 보너스 번호는 1개여야 합니다."),
     INVALID_MONEY_UNIT("[ERROR] 구매 금액은 1,000원 단위여야 합니다.");
 
     private final String message;
