@@ -1,10 +1,12 @@
 package lotto;
 
+import lotto.domain.Lotto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class LottoTest {
@@ -22,4 +24,9 @@ class LottoTest {
     }
 
     // TODO: 추가 기능 구현에 따른 테스트 코드 작성
+    @Test
+    void 정상_생성_테스트() {
+       assertThatCode(() -> new Lotto(List.of(1,2,3,4,5,6)))
+               .doesNotThrowAnyException();
+    }
 }
