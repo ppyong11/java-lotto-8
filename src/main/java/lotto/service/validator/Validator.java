@@ -42,4 +42,18 @@ public class Validator {
             }
         }
     }
+
+    public static int parseInt(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(ErrorMessage.NOT_NUMBER.getMessage());
+        }
+    }
+
+    public static void validateMoneyUnit(int money) {
+        if (money < 1000 || money % 1000 != 0) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_MONEY_UNIT.getMessage());
+        }
+    }
 }
