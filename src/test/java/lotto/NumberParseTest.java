@@ -16,7 +16,7 @@ public class NumberParseTest extends NsTest {
         String input = "1, 2, 3, 4, 5, 6";
         List<Integer> numbers = NumberParse.winningNumberParse(input);
 
-        assertThat(numbers).isEqualTo(List.of(1,2,3,4,5));
+        assertThat(numbers).isEqualTo(List.of(1,2,3,4,5,6));
     }
 
     @Test
