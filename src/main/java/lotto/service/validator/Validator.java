@@ -7,10 +7,20 @@ import java.util.List;
 
 public class Validator {
 
-    public static void validateParsedValue(List<Integer> winningNumbers) {
+    public static void validateWinningNumbers(List<Integer> winningNumbers) {
         validateCount(winningNumbers);
         validateDuplicate(winningNumbers);
         validateRange(winningNumbers);
+    }
+
+    public static void validateBonusNumber(int bonusNumber, List<Integer> winningNumbers) {
+        if (winningNumbers.contains(bonusNumber)) {
+            throw new IllegalArgumentException(ErrorMessage.DUPLICATED_BONUS_NUMBER.getMessage());
+        }
+
+        if (bonusNumber < 1 || bonusNumber > 45) {
+            throw new IllegalArgumentException(ErrorMessage.OUT_OF_RANGE.getMessage());
+        }
     }
 
     private static void validateCount(List<Integer> numbers) {
