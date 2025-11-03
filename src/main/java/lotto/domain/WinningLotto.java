@@ -2,10 +2,7 @@ package lotto.domain;
 
 import lotto.exception.ErrorMessage;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 public class WinningLotto {
     private final Lotto winningNumber;
     private final int bonusNumber;
