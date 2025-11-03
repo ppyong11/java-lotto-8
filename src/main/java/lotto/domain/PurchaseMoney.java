@@ -2,10 +2,10 @@ package lotto.domain;
 
 import lotto.exception.ErrorMessage;
 
-public class Money {
+public class PurchaseMoney {
     private final int money;
 
-    public Money(String input) {
+    public PurchaseMoney(String input) {
         int parsed = parseInt(input);
         validateMoneyUnit(parsed);
         this.money = parsed;
@@ -32,5 +32,4 @@ public class Money {
             throw new IllegalArgumentException(ErrorMessage.INVALID_MONEY_UNIT.getMessage());
         }
     }
-
 }
