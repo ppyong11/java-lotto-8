@@ -10,7 +10,7 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
-public class PrizeMoneyTesr extends NsTest {
+public class PrizeMoneyTest extends NsTest {
     @Test
     void 객체_생성_테스트() {
         Map<Rank, Integer> results = new EnumMap<>(Rank.class);
