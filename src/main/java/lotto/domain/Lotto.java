@@ -17,6 +17,16 @@ public class Lotto {
         return numbers;
     }
 
+    public int matchCount(List<Integer> winning) {
+        return (int) winning.stream()
+                .filter(numbers::contains)
+                .count(); //일치하는 게 없으면 0 반환
+    }
+
+    public boolean containsBonus(int bonus) {
+        return numbers.contains(bonus);
+    }
+
     private void validate(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_COUNT.getMessage());

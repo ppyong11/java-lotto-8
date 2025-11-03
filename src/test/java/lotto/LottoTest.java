@@ -37,4 +37,12 @@ class LottoTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(ErrorMessage.OUT_OF_RANGE.getMessage());
     }
+
+    @Test
+    void 일치하는_번호_테스트() {
+        Lotto lotto = new Lotto(List.of(1,2,3,4,5,42));
+        int count = lotto.matchCount(List.of(1,7,8,9,10,11));
+
+        assertThat(count).isEqualTo(1);
+    }
 }

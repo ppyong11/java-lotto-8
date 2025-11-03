@@ -5,7 +5,8 @@ public enum Rank {
     RANK_4(4, 50_000),
     RANK_3(5, 1_500_000),
     RANK_2(5, 30_000_000, true),
-    RANK_1(6, 2_000_000_000);
+    RANK_1(6, 2_000_000_000),
+    NONE(0, 0);
 
     private final int matchCount;
     private final long winningAmount;
@@ -21,6 +22,19 @@ public enum Rank {
         this.winningAmount = winningAmount;
         this.matchCount = matchCount;
         this.matchBonus = matchBonus;
+    }
+
+    public long getWinningAmount() {
+        return winningAmount;
+    }
+
+    public static Rank valueOf(int matchCount, boolean bonusMatch) {
+        if (matchCount == 3) return RANK_5;
+        if (matchCount == 4) return RANK_4;
+        if (matchCount == 5 && bonusMatch) return RANK_2;
+        if (matchCount == 5) return RANK_3;
+        if (matchCount == 6) return RANK_1;
+        return NONE;
     }
 
     public String toString(int lottoCount) {
